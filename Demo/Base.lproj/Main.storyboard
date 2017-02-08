@@ -21,23 +21,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="S__16711795-1" translatesAutoresizingMaskIntoConstraints="NO" id="nvy-cD-qtn">
-                                <rect key="frame" x="67" y="34" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_8377" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-HH-FLO">
+                                <rect key="frame" x="185" y="20" width="190" height="325"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iho-4v-SaN">
-                                <rect key="frame" x="166" y="272" width="85" height="102"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_8381" translatesAutoresizingMaskIntoConstraints="NO" id="nLh-O9-WOj">
+                                <rect key="frame" x="0.0" y="343" width="190" height="324"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">apple
-apple
-apple
-apple
-APPLE
-</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="S__16711795-1" translatesAutoresizingMaskIntoConstraints="NO" id="nvy-cD-qtn">
+                                <rect key="frame" x="0.0" y="20" width="188" height="325"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_8385" translatesAutoresizingMaskIntoConstraints="NO" id="N7w-yp-fyc">
+                                <rect key="frame" x="185" y="343" width="190" height="324"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.11464077979326248" green="0.99380725622177124" blue="0.010783622972667217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -48,6 +47,9 @@ APPLE
         </scene>
     </scenes>
     <resources>
+        <image name="IMG_8377" width="120" height="120"/>
+        <image name="IMG_8381" width="120" height="120"/>
+        <image name="IMG_8385" width="120" height="120"/>
         <image name="S__16711795-1" width="120" height="120"/>
     </resources>
 </document>
