@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bXx-ni-NJV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YI9-Gh-dhM">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
@@ -111,12 +111,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OSb-Xw-4O2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6tD-UF-hfc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="6tD-UF-hfc">
                             <connections>
                                 <segue destination="ixI-xi-7ZK" kind="show" id="Rd1-1k-D1g"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="bXx-ni-NJV" id="aGf-2U-K9D"/>
                         <outlet property="collectionView" destination="k0e-Bb-htg" id="38a-gn-TVY"/>
