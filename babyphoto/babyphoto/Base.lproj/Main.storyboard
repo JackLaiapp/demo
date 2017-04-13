@@ -48,7 +48,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="204" height="314"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d3H-gv-HEL">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d3H-gv-HEL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="204" height="314"/>
                                                             </imageView>
                                                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpt-26-TXx">
@@ -160,26 +160,40 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="273"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkb-NH-g33">
-                                <rect key="frame" x="0.0" y="383" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="408" width="375" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2vO-8s-gCI">
-                                <rect key="frame" x="0.0" y="423" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="469" width="375" height="30"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqc-jI-7ol">
-                                <rect key="frame" x="138" y="345" width="98" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOy-kM-yLl">
+                                <rect key="frame" x="0.0" y="385" width="50" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="98" id="Vmd-Vv-lNv"/>
+                                    <constraint firstAttribute="width" constant="50" id="pJZ-A0-hli"/>
                                 </constraints>
-                                <state key="normal" title="Select Photo"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fx-vH-a2s">
+                                <rect key="frame" x="0.0" y="446" width="80" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="l3b-Eg-8Vq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqc-jI-7ol">
+                                <rect key="frame" x="148" y="336" width="78" height="70"/>
+                                <state key="normal" title="Select Photo" image="camera-icon-png"/>
                                 <connections>
                                     <action selector="selectPhoto:" destination="ixI-xi-7ZK" eventType="touchUpInside" id="qqo-NG-k5A"/>
                                 </connections>
@@ -190,16 +204,22 @@
                             <constraint firstItem="eru-jR-ZjL" firstAttribute="top" secondItem="HYT-sF-g8S" secondAttribute="top" constant="64" id="5MY-M5-TaO"/>
                             <constraint firstAttribute="trailing" secondItem="2vO-8s-gCI" secondAttribute="trailing" id="9aM-kC-eLX"/>
                             <constraint firstItem="dkb-NH-g33" firstAttribute="leading" secondItem="HYT-sF-g8S" secondAttribute="leading" id="DAy-QK-kmA"/>
+                            <constraint firstItem="Eqc-jI-7ol" firstAttribute="top" secondItem="huD-dE-BOV" secondAttribute="bottom" constant="272" id="DDp-Aa-fnV"/>
                             <constraint firstAttribute="trailing" secondItem="dkb-NH-g33" secondAttribute="trailing" id="GfI-2O-2nj"/>
-                            <constraint firstItem="Eqc-jI-7ol" firstAttribute="leading" secondItem="HYT-sF-g8S" secondAttribute="leading" constant="138" id="LbE-fm-Wft"/>
-                            <constraint firstItem="2vO-8s-gCI" firstAttribute="top" secondItem="dkb-NH-g33" secondAttribute="bottom" constant="10" id="MfC-Ta-732"/>
+                            <constraint firstItem="2vO-8s-gCI" firstAttribute="top" secondItem="dkb-NH-g33" secondAttribute="bottom" constant="31" id="MfC-Ta-732"/>
                             <constraint firstItem="2vO-8s-gCI" firstAttribute="leading" secondItem="HYT-sF-g8S" secondAttribute="leading" id="RN4-Jy-CK5"/>
                             <constraint firstItem="eru-jR-ZjL" firstAttribute="leading" secondItem="HYT-sF-g8S" secondAttribute="leading" id="ShH-bl-BsZ"/>
+                            <constraint firstItem="Eqc-jI-7ol" firstAttribute="leading" secondItem="iOy-kM-yLl" secondAttribute="trailing" constant="98" id="U9S-Jc-BD9"/>
                             <constraint firstItem="eru-jR-ZjL" firstAttribute="centerX" secondItem="HYT-sF-g8S" secondAttribute="centerX" id="Ueg-m6-XJ4"/>
+                            <constraint firstItem="iOy-kM-yLl" firstAttribute="leading" secondItem="dkb-NH-g33" secondAttribute="leading" id="VSH-oe-Uvg"/>
+                            <constraint firstItem="iOy-kM-yLl" firstAttribute="leading" secondItem="6fx-vH-a2s" secondAttribute="leading" id="XWf-NC-tA9"/>
+                            <constraint firstItem="dkb-NH-g33" firstAttribute="top" secondItem="Eqc-jI-7ol" secondAttribute="bottom" constant="2" id="bGw-Z1-PXd"/>
+                            <constraint firstItem="6fx-vH-a2s" firstAttribute="top" secondItem="dkb-NH-g33" secondAttribute="bottom" constant="8" symbolic="YES" id="bi7-Lg-NBT"/>
                             <constraint firstAttribute="trailing" secondItem="eru-jR-ZjL" secondAttribute="trailing" id="o6X-Wk-uzt"/>
-                            <constraint firstItem="dkb-NH-g33" firstAttribute="top" secondItem="eru-jR-ZjL" secondAttribute="bottom" constant="46" id="rrQ-JI-nHV"/>
+                            <constraint firstItem="dkb-NH-g33" firstAttribute="top" secondItem="eru-jR-ZjL" secondAttribute="bottom" constant="71" id="rrQ-JI-nHV"/>
+                            <constraint firstAttribute="trailing" secondItem="Eqc-jI-7ol" secondAttribute="trailing" constant="149" id="sOl-fi-DNY"/>
+                            <constraint firstItem="iOy-kM-yLl" firstAttribute="bottom" secondItem="Eqc-jI-7ol" secondAttribute="bottom" id="u2e-g5-rf6"/>
                             <constraint firstItem="rTw-QJ-DNs" firstAttribute="top" secondItem="eru-jR-ZjL" secondAttribute="bottom" constant="281" id="usr-eJ-Rrp"/>
-                            <constraint firstItem="Eqc-jI-7ol" firstAttribute="centerY" secondItem="HYT-sF-g8S" secondAttribute="centerY" constant="26.5" id="yt3-5h-d5a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Photo" id="vqy-dO-pp8">
@@ -289,6 +309,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera-icon-png" width="256" height="256"/>
         <image name="minus-flat" width="256" height="256"/>
     </resources>
 </document>

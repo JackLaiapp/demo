@@ -45,7 +45,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         info.image = UIImagePNGRepresentation(imageView.image!)! as NSData?
         info.title = textField.text!
-        //info.location = location.text!
+        info.location = location.text!
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }

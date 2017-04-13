@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var showLabel: UILabel!
     @IBOutlet var showMap: MKMapView!
     var myData : Info!
-    var location = "桃園市中壢區元化路223號"
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "MyPin"
         
@@ -45,7 +45,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         showLabel.text = myData.title
         // Do any additional setup after loading the view.
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(location, completionHandler: { placemarks, error in
+        geoCoder.geocodeAddressString(myData.location!, completionHandler: { placemarks, error in
 
             
             if let placemarks = placemarks {
@@ -54,8 +54,8 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
                 
                 // Add annotation
                 let annotation = MKPointAnnotation()
-                annotation.title = "宏其婦幼醫院"
-                annotation.subtitle = "醫院"
+                annotation.title = self.myData.location
+                //annotation.subtitle = "醫院"
                 
                 if let location = placemark.location {
                     annotation.coordinate = location.coordinate

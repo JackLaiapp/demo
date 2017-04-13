@@ -61,20 +61,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     // 點選 cell 後執行的動作
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /*let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let data = info[indexPath.row]
-        context.delete(data)
-        
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
-        do{
-            info = try context.fetch(Info.fetchRequest())
-        }
-        catch{
-            print("Fetching Failed")
-        }
-        self.collectionView.reloadData()
-*/
+
         let myView = storyboard?.instantiateViewController(withIdentifier: "Showdetail") as! DetailViewController
         myView.myData = self.info[indexPath.item]
         navigationController?.pushViewController(myView, animated: true)
