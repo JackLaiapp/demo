@@ -13,4 +13,6 @@ class InfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var babyImageView: UIImageView!
     @IBOutlet weak var babyTitleLabel: UILabel!
 
+    @IBOutlet var deleteButton: UIButton!
+
 }

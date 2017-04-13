@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "camera-icon-png.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "close@2x.png",
       "scale" : "2x"
     },
     {
