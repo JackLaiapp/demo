@@ -44,9 +44,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! InfoCollectionViewCell
         let data = info[indexPath.row]
-        if data.image != nil || data.title != nil {
+        if data.image != nil {
         cell.babyImageView.image = UIImage(data: data.image as! Data)
-        cell.babyTitleLabel.text = data.title
+        cell.babyTitleLabel.text = data.date! + "\n" + data.title!
         }
         if self.navigationItem.rightBarButtonItem?.title == "Edit" {
             cell.deleteButton.isHidden = true

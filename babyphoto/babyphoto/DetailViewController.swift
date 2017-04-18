@@ -42,7 +42,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         showPhoto.image = UIImage(data: myData.image as! Data)
-        showLabel.text = myData.title
+        showLabel.text = myData.date! + " " + myData.title!
         // Do any additional setup after loading the view.
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(myData.location!, completionHandler: { placemarks, error in
