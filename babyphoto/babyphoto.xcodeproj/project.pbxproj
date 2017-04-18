@@ -108,7 +108,7 @@
 				TargetAttributes = {
 					1F6963F61E9B900A00F055DD = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = VCK3Y3K746;
+						DevelopmentTeam = 9XZ4ZTHMQT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -275,7 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VCK3Y3K746;
+				DEVELOPMENT_TEAM = 9XZ4ZTHMQT;
 				INFOPLIST_FILE = babyphoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = demo.babyphoto;
@@ -288,7 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VCK3Y3K746;
+				DEVELOPMENT_TEAM = 9XZ4ZTHMQT;
 				INFOPLIST_FILE = babyphoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = demo.babyphoto;

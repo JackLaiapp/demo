@@ -78,6 +78,16 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is AddViewController {
+            let controller = segue.destination as! AddViewController
+            
+            controller.myData = myData
+        }
+        
+        
+    }
 
     /*
     // MARK: - Navigation

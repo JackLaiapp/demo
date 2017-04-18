@@ -16,7 +16,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet var location: UITextField!
     @IBOutlet var dateTextField: UITextField!
     var datePicker : UIDatePicker!
-    
+    var myData : Info!
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         myScrollView.setContentOffset(CGPoint(x:0,y:200), animated: true)
@@ -154,6 +154,10 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         datePicker = UIDatePicker(frame: CGRect(x:0, y:200, width:view.frame.width, height:200))
         datePicker.backgroundColor = .white
         datePicker.datePickerMode = UIDatePickerMode.date
+        textField.text = myData.title
+        imageView.image = UIImage(data: myData.image as! Data)
+        location.text = myData.location
+        dateTextField.text = myData.date
         // Do any additional setup after loading the view.
     }
 
@@ -162,7 +166,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
