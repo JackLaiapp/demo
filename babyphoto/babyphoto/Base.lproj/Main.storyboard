@@ -157,16 +157,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-d2-TIT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jay-yA-Cq3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vi-XC-k7w">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_6178" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-d2-TIT">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-kc-9Jt">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="392"/>
                                             </imageView>
@@ -209,7 +209,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="d9C-kc-9Jt" firstAttribute="top" secondItem="3Vi-XC-k7w" secondAttribute="top" id="0kb-ef-8es"/>
                                             <constraint firstItem="vV5-vt-HCe" firstAttribute="top" secondItem="d9C-kc-9Jt" secondAttribute="bottom" constant="8" id="3c2-J8-tFp"/>
@@ -223,6 +223,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3Vi-XC-k7w" secondAttribute="trailing" id="FE4-Vn-cmF"/>
                                     <constraint firstItem="3Vi-XC-k7w" firstAttribute="leading" secondItem="jay-yA-Cq3" secondAttribute="leading" id="WkH-kL-yc4"/>
@@ -355,6 +356,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IMG_6178" width="2129" height="2129"/>
         <image name="minus-flat" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
