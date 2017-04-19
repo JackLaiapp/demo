@@ -73,6 +73,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if data.image != nil && (data.title?.isEmpty)! == false && (data.date?.isEmpty)! == false {
         cell.babyImageView.image = UIImage(data: data.image as! Data)
         cell.babyTitleLabel.text = data.date! + "\n" + data.title!
+        backgroundImageView.image = cell.babyImageView.image
         }
         if self.navigationItem.rightBarButtonItem?.title == "Edit" {
             cell.deleteButton.isHidden = true

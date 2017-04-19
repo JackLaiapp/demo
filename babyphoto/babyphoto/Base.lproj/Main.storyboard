@@ -157,11 +157,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-d2-TIT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jay-yA-Cq3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Vi-XC-k7w">
-                                        <rect key="frame" x="0.0" y="-64" width="375" height="733"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vi-XC-k7w">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-kc-9Jt">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="392"/>
@@ -214,7 +218,7 @@
                                             <constraint firstAttribute="width" constant="375" id="UIl-wR-RWG"/>
                                             <constraint firstItem="vV5-vt-HCe" firstAttribute="top" secondItem="3Vi-XC-k7w" secondAttribute="top" constant="400" id="hRf-SJ-CD3"/>
                                             <constraint firstItem="vV5-vt-HCe" firstAttribute="leading" secondItem="3Vi-XC-k7w" secondAttribute="leadingMargin" id="l8k-I8-tgf"/>
-                                            <constraint firstAttribute="height" constant="733" id="sSl-EO-sg1"/>
+                                            <constraint firstAttribute="height" constant="667" id="sSl-EO-sg1"/>
                                             <constraint firstItem="vV5-vt-HCe" firstAttribute="top" secondItem="d9C-kc-9Jt" secondAttribute="bottom" constant="8" symbolic="YES" id="wBn-WT-NxF"/>
                                         </constraints>
                                     </view>
@@ -222,7 +226,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3Vi-XC-k7w" secondAttribute="trailing" id="FE4-Vn-cmF"/>
                                     <constraint firstItem="3Vi-XC-k7w" firstAttribute="leading" secondItem="jay-yA-Cq3" secondAttribute="leading" id="WkH-kL-yc4"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Vi-XC-k7w" secondAttribute="bottom" constant="-66" id="dyk-aS-kLb"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Vi-XC-k7w" secondAttribute="bottom" id="dyk-aS-kLb"/>
                                     <constraint firstItem="3Vi-XC-k7w" firstAttribute="top" secondItem="jay-yA-Cq3" secondAttribute="top" id="o38-UR-i4d"/>
                                 </constraints>
                             </scrollView>
@@ -321,7 +325,6 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="post" destination="Fjh-Oc-bRb" id="fgE-DR-Wcx"/>
                         <outlet property="showLabel" destination="eMO-aS-SKO" id="qc0-is-zJ7"/>
                         <outlet property="showMap" destination="mOO-Hs-zg0" id="2hP-pT-yfQ"/>
                         <outlet property="showPhoto" destination="nRi-GU-14M" id="jtp-rp-wMI"/>

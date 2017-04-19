@@ -94,11 +94,11 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         showMap.showsScale = true
         showMap.showsTraffic = true
     }
-    
+
     @IBAction func post(_ sender: Any) {
 
-        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
-            if let fbComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter){
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
+            if let fbComposer = SLComposeViewController(forServiceType: SLServiceTypeFacebook){
                 fbComposer.setInitialText(showLabel.text)
                 fbComposer.add(showPhoto.image)
                 present(fbComposer, animated: true, completion: nil)
