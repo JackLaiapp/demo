@@ -41,12 +41,34 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        showdata()
+
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+            let controller = segue.destination as! AddViewController
+            
+            controller.myData = myData
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        showdata()
+    }
+    
+    func showdata(){
         showPhoto.image = UIImage(data: myData.image as! Data)
         showLabel.text = myData.date! + " " + myData.title!
-        // Do any additional setup after loading the view.
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(myData.location!, completionHandler: { placemarks, error in
-
+            
             
             if let placemarks = placemarks {
                 // Get the first placemark
@@ -72,23 +94,6 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         showMap.showsScale = true
         showMap.showsTraffic = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.destination is AddViewController {
-            let controller = segue.destination as! AddViewController
-            
-            controller.myData = myData
-        }
-        
-        
-    }
-
     /*
     // MARK: - Navigation
 

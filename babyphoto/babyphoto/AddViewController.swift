@@ -117,20 +117,28 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
     @IBAction func savebtn(_ sender: Any) {
+
         if imageView.image != nil && textField.text?.isEmpty == false && location.text?.isEmpty == false && dateTextField.text?.isEmpty == false{
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let info = Info(context: context)
-		
-        info.image = UIImagePNGRepresentation(imageView.image!)! as NSData?
-        info.title = textField.text!
-        info.location = location.text!
-        info.date = dateTextField.text!
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            
+        if myData == nil{
+            myData = Info(context: appDelegate.persistentContainer.viewContext)
+            }
+            
+        myData.image = UIImagePNGRepresentation(imageView.image!)! as NSData?
+        myData.title = textField.text!
+        myData.location = location.text!
+        myData.date = dateTextField.text!
+            
+        print("Saving data to context ...")
+        appDelegate.saveContext()
+            }
         navigationController!.popViewController(animated: true)
         }else{
          noselectImage()   
         }
+            
     }
     
     func noselectImage(){
@@ -151,13 +159,17 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         datePicker = UIDatePicker(frame: CGRect(x:0, y:200, width:view.frame.width, height:200))
         datePicker.backgroundColor = .white
         datePicker.datePickerMode = UIDatePickerMode.date
+        
+        if myData != nil{
         textField.text = myData.title
         imageView.image = UIImage(data: myData.image as! Data)
         location.text = myData.location
         dateTextField.text = myData.date
+        }
         // Do any additional setup after loading the view.
     }
 

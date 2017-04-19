@@ -9,17 +9,35 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var info:[Info] = []
+    var searchController : UISearchController!
+    var searchResults : [Info] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.rightBarButtonItem! = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.done, target: self, action: #selector(ViewController.deleteBtn(_:)))
+        
+        //Search at the top
+        self.searchController = UISearchController(searchResultsController:  nil)
+        
+        self.searchController.searchResultsUpdater = self
+        //self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = true
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        
+        
+        searchController.searchBar.becomeFirstResponder()
+        
+        self.navigationItem.titleView = searchController.searchBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,12 +56,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     // 必須實作的方法：每一組有幾個 cell
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return info.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return info.count
+        }
+        
     }
     // 必須實作的方法：每個 cell 要顯示的內容
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! InfoCollectionViewCell
-        let data = info[indexPath.row]
+        
+        let data = (searchController.isActive) ? searchResults[indexPath.row]
+            : info[indexPath.row]
+
         if data.image != nil {
         cell.babyImageView.image = UIImage(data: data.image as! Data)
         cell.babyTitleLabel.text = data.date! + "\n" + data.title!
@@ -121,6 +147,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     self.collectionView.reloadData()
  
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    func filterContent(for searchText: String) {
+        searchResults = info.filter({ (title) -> Bool in
+            if let name = title.title {
+                let isMatch = name.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            return false
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            collectionView.reloadData()
+        }
+    }
+    
 }
 
 
