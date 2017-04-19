@@ -13,8 +13,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet var myScrollView: UIScrollView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet var location: UITextField!
-    @IBOutlet var dateTextField: UITextField!
+    @IBOutlet weak var location: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
     var datePicker : UIDatePicker!
     var myData : Info!
     

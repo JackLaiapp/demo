@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-
+import Social
 class DetailViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet var showPhoto: UIImageView!
@@ -66,9 +66,9 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     func showdata(){
         showPhoto.image = UIImage(data: myData.image as! Data)
         showLabel.text = myData.date! + " " + myData.title!
+        
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(myData.location!, completionHandler: { placemarks, error in
-            
             
             if let placemarks = placemarks {
                 // Get the first placemark
@@ -93,6 +93,27 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         showMap.showsCompass = true
         showMap.showsScale = true
         showMap.showsTraffic = true
+    }
+    
+    @IBAction func post(_ sender: Any) {
+
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+            if let fbComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter){
+                fbComposer.setInitialText(showLabel.text)
+                fbComposer.add(showPhoto.image)
+                present(fbComposer, animated: true, completion: nil)
+            }
+        }else{
+            let alert = UIAlertController(title: "Ooops!", message: "Please login to your facebook", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Login", style: .default, handler: {
+                (action) in
+                if let settingURL = URL(string: UIApplicationOpenSettingsURLString){
+                    UIApplication.shared.open(settingURL, options: [:], completionHandler: nil)
+                }
+            }))
+            present(alert, animated: true, completion: nil)
+        }
     }
     /*
     // MARK: - Navigation
