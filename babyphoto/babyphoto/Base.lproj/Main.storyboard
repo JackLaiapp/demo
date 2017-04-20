@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HEc-tU-r8o">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HEc-tU-r8o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,7 +145,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--Add Photo-->
+        <!--新增照片-->
         <scene sceneID="EeC-Wz-xTM">
             <objects>
                 <viewController id="ixI-xi-7ZK" customClass="AddViewController" customModule="babyphoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,15 +163,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vi-XC-k7w">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_6178" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-d2-TIT">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6178" translatesAutoresizingMaskIntoConstraints="NO" id="WAA-d2-TIT">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="379"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-kc-9Jt">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="392"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vV5-vt-HCe">
-                                                <rect key="frame" x="8" y="400" width="360" height="110"/>
+                                                <rect key="frame" x="7" y="440" width="360" height="150"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入10字浪漫的話" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AVS-jP-8Al">
                                                         <rect key="frame" x="0.0" y="0.0" width="360" height="30"/>
@@ -183,8 +182,18 @@
                                                             <outlet property="delegate" destination="ixI-xi-7ZK" id="fG9-Az-Lky"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入地點" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0rK-d2-3Jg">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入照片地點名稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dqb-Mb-1nq">
                                                         <rect key="frame" x="0.0" y="40" width="360" height="30"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="ixI-xi-7ZK" id="K2I-RI-hX9"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入照片地址" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0rK-d2-3Jg">
+                                                        <rect key="frame" x="0.0" y="80" width="360" height="30"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -194,7 +203,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入日期" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="r8B-1X-kyk">
-                                                        <rect key="frame" x="0.0" y="80" width="360" height="30"/>
+                                                        <rect key="frame" x="0.0" y="120" width="360" height="30"/>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -214,17 +223,24 @@
                                             <constraint firstItem="d9C-kc-9Jt" firstAttribute="top" secondItem="3Vi-XC-k7w" secondAttribute="top" id="0kb-ef-8es"/>
                                             <constraint firstItem="vV5-vt-HCe" firstAttribute="top" secondItem="d9C-kc-9Jt" secondAttribute="bottom" constant="8" id="3c2-J8-tFp"/>
                                             <constraint firstItem="d9C-kc-9Jt" firstAttribute="leading" secondItem="3Vi-XC-k7w" secondAttribute="leading" id="AA7-bJ-u4K"/>
-                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="centerX" secondItem="d9C-kc-9Jt" secondAttribute="centerX" id="GcA-Ql-04V"/>
+                                            <constraint firstItem="WAA-d2-TIT" firstAttribute="top" secondItem="3Vi-XC-k7w" secondAttribute="top" id="EMk-fB-gjd"/>
+                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="centerX" secondItem="d9C-kc-9Jt" secondAttribute="centerX" constant="-0.5" id="GcA-Ql-04V"/>
                                             <constraint firstAttribute="width" constant="375" id="UIl-wR-RWG"/>
-                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="top" secondItem="3Vi-XC-k7w" secondAttribute="top" constant="400" id="hRf-SJ-CD3"/>
-                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="leading" secondItem="3Vi-XC-k7w" secondAttribute="leadingMargin" id="l8k-I8-tgf"/>
+                                            <constraint firstAttribute="bottom" secondItem="WAA-d2-TIT" secondAttribute="bottom" constant="288" id="aor-mt-SzQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="WAA-d2-TIT" secondAttribute="trailing" id="gDY-yv-1yZ"/>
+                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="top" secondItem="3Vi-XC-k7w" secondAttribute="top" constant="440" id="hRf-SJ-CD3"/>
+                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="centerX" secondItem="3Vi-XC-k7w" secondAttribute="centerX" id="hnU-ad-om3"/>
+                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="leading" secondItem="3Vi-XC-k7w" secondAttribute="leadingMargin" constant="-1" id="l8k-I8-tgf"/>
+                                            <constraint firstItem="WAA-d2-TIT" firstAttribute="leading" secondItem="3Vi-XC-k7w" secondAttribute="leading" id="r5d-9d-jjp"/>
                                             <constraint firstAttribute="height" constant="667" id="sSl-EO-sg1"/>
-                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="top" secondItem="d9C-kc-9Jt" secondAttribute="bottom" constant="8" symbolic="YES" id="wBn-WT-NxF"/>
+                                            <constraint firstItem="vV5-vt-HCe" firstAttribute="top" secondItem="d9C-kc-9Jt" secondAttribute="bottom" constant="8" id="wBn-WT-NxF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="3Vi-XC-k7w" firstAttribute="centerY" secondItem="jay-yA-Cq3" secondAttribute="centerY" id="7Qk-Fh-Dle"/>
+                                    <constraint firstItem="3Vi-XC-k7w" firstAttribute="centerX" secondItem="jay-yA-Cq3" secondAttribute="centerX" id="837-d0-kdg"/>
                                     <constraint firstAttribute="trailing" secondItem="3Vi-XC-k7w" secondAttribute="trailing" id="FE4-Vn-cmF"/>
                                     <constraint firstItem="3Vi-XC-k7w" firstAttribute="leading" secondItem="jay-yA-Cq3" secondAttribute="leading" id="WkH-kL-yc4"/>
                                     <constraint firstAttribute="bottom" secondItem="3Vi-XC-k7w" secondAttribute="bottom" id="dyk-aS-kLb"/>
@@ -238,13 +254,15 @@
                             <constraint firstItem="jay-yA-Cq3" firstAttribute="top" secondItem="HYT-sF-g8S" secondAttribute="top" id="93E-bK-wVw"/>
                             <constraint firstItem="jay-yA-Cq3" firstAttribute="top" secondItem="HYT-sF-g8S" secondAttribute="top" id="Ccy-pZ-7AH"/>
                             <constraint firstItem="jay-yA-Cq3" firstAttribute="leading" secondItem="HYT-sF-g8S" secondAttribute="leading" id="Fl0-Eg-EXq"/>
+                            <constraint firstItem="jay-yA-Cq3" firstAttribute="centerY" secondItem="HYT-sF-g8S" secondAttribute="centerY" id="Vf8-pJ-F5g"/>
                             <constraint firstItem="rTw-QJ-DNs" firstAttribute="top" secondItem="jay-yA-Cq3" secondAttribute="bottom" id="baJ-So-CTd"/>
                             <constraint firstItem="jay-yA-Cq3" firstAttribute="leading" secondItem="HYT-sF-g8S" secondAttribute="leading" id="bkM-aV-U3L"/>
                             <constraint firstAttribute="trailing" secondItem="jay-yA-Cq3" secondAttribute="trailing" id="dB8-7W-qDu"/>
                             <constraint firstAttribute="trailing" secondItem="jay-yA-Cq3" secondAttribute="trailing" id="i2s-a5-Nc3"/>
+                            <constraint firstItem="jay-yA-Cq3" firstAttribute="centerX" secondItem="HYT-sF-g8S" secondAttribute="centerX" id="ibS-WU-DfE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Photo" id="vqy-dO-pp8">
+                    <navigationItem key="navigationItem" title="新增照片" id="vqy-dO-pp8">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="save" id="1Ci-wd-BJ9">
                                 <connections>
@@ -263,6 +281,7 @@
                         <outlet property="imageView" destination="d9C-kc-9Jt" id="dZd-gP-HFx"/>
                         <outlet property="location" destination="0rK-d2-3Jg" id="3zs-yh-ZB9"/>
                         <outlet property="myScrollView" destination="jay-yA-Cq3" id="agU-UC-HR1"/>
+                        <outlet property="nameTextField" destination="Dqb-Mb-1nq" id="WgS-e9-Gtm"/>
                         <outlet property="textField" destination="AVS-jP-8Al" id="GMt-ke-2d9"/>
                     </connections>
                 </viewController>
@@ -270,7 +289,7 @@
             </objects>
             <point key="canvasLocation" x="1920.8" y="138.98050974512745"/>
         </scene>
-        <!--Detail-->
+        <!--前世情人-->
         <scene sceneID="gif-qn-bRc">
             <objects>
                 <viewController storyboardIdentifier="Showdetail" id="1xq-J1-TNX" customClass="DetailViewController" customModule="babyphoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -298,19 +317,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nRi-GU-14M" firstAttribute="leading" secondItem="3Rg-UH-jGv" secondAttribute="leading" id="CP4-lL-gkC"/>
+                            <constraint firstItem="mOO-Hs-zg0" firstAttribute="centerX" secondItem="3Rg-UH-jGv" secondAttribute="centerX" id="Dne-8l-8Kc"/>
                             <constraint firstItem="mOO-Hs-zg0" firstAttribute="leading" secondItem="3Rg-UH-jGv" secondAttribute="leading" id="HCX-mE-Jf3"/>
                             <constraint firstAttribute="trailing" secondItem="mOO-Hs-zg0" secondAttribute="trailing" id="KYb-pD-MeY"/>
                             <constraint firstItem="eMO-aS-SKO" firstAttribute="top" secondItem="nRi-GU-14M" secondAttribute="bottom" constant="8" id="L7N-sH-Xgk"/>
                             <constraint firstAttribute="trailing" secondItem="nRi-GU-14M" secondAttribute="trailing" id="OI6-6f-WJD"/>
                             <constraint firstItem="mOO-Hs-zg0" firstAttribute="top" secondItem="eMO-aS-SKO" secondAttribute="bottom" constant="8" id="YKs-QJ-imA"/>
                             <constraint firstItem="5CZ-bu-4Tk" firstAttribute="top" secondItem="nRi-GU-14M" secondAttribute="bottom" constant="260" id="YQv-XO-XmU"/>
+                            <constraint firstItem="nRi-GU-14M" firstAttribute="centerX" secondItem="3Rg-UH-jGv" secondAttribute="centerX" id="e9Y-HK-yAn"/>
                             <constraint firstItem="eMO-aS-SKO" firstAttribute="leading" secondItem="3Rg-UH-jGv" secondAttribute="leading" id="kMS-zy-Sdh"/>
                             <constraint firstItem="nRi-GU-14M" firstAttribute="top" secondItem="KgX-6q-rOU" secondAttribute="bottom" constant="-20" id="khO-KC-xRF"/>
                             <constraint firstItem="5CZ-bu-4Tk" firstAttribute="top" secondItem="mOO-Hs-zg0" secondAttribute="bottom" id="p9k-vM-RHx"/>
                             <constraint firstAttribute="trailing" secondItem="eMO-aS-SKO" secondAttribute="trailing" id="tWN-Xa-3Dy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="HzS-2H-Ubr">
+                    <navigationItem key="navigationItem" title="前世情人" id="HzS-2H-Ubr">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="edit" id="x3s-yb-SGA">
                                 <connections>

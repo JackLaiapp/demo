@@ -64,7 +64,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     }
     
     func showdata(){
-        showPhoto.image = UIImage(data: myData.image as! Data)
+        showPhoto.image = UIImage(data: myData.image! as Data)
         showLabel.text = myData.date! + " " + myData.title!
         
         let geoCoder = CLGeocoder()
@@ -76,8 +76,8 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
                 
                 // Add annotation
                 let annotation = MKPointAnnotation()
-                annotation.title = self.myData.location
-                //annotation.subtitle = "醫院"
+                annotation.title = self.myData.name
+                annotation.subtitle = self.myData.location
                 
                 if let location = placemark.location {
                     annotation.coordinate = location.coordinate

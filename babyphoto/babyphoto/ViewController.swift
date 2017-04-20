@@ -71,7 +71,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             : info[indexPath.row]
 
         if data.image != nil && (data.title?.isEmpty)! == false && (data.date?.isEmpty)! == false {
-        cell.babyImageView.image = UIImage(data: data.image as! Data)
+        cell.babyImageView.image = UIImage(data: data.image! as Data)
         cell.babyTitleLabel.text = data.date! + "\n" + data.title!
         backgroundImageView.image = cell.babyImageView.image
         }

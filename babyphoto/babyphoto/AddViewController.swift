@@ -13,6 +13,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet var myScrollView: UIScrollView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     var datePicker : UIDatePicker!
@@ -118,7 +119,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     @IBAction func savebtn(_ sender: Any) {
 
-        if imageView.image != nil && textField.text?.isEmpty == false && location.text?.isEmpty == false && dateTextField.text?.isEmpty == false{
+        if imageView.image != nil && textField.text?.isEmpty == false && location.text?.isEmpty == false && dateTextField.text?.isEmpty == false && nameTextField.text?.isEmpty == false{
 
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             
@@ -130,6 +131,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         myData.title = textField.text!
         myData.location = location.text!
         myData.date = dateTextField.text!
+        myData.name = nameTextField.text!
             
         print("Saving data to context ...")
         appDelegate.saveContext()
@@ -166,7 +168,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         if myData != nil{
         textField.text = myData.title
-        imageView.image = UIImage(data: myData.image as! Data)
+        imageView.image = UIImage(data: myData.image! as Data)
+        nameTextField.text = myData.name
         location.text = myData.location
         dateTextField.text = myData.date
         }
